@@ -5,41 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/js/all.min.js"></script>
     <title>Job Tracker</title>
 </head>
 
-<body class="px-60">
-    <nav>
-        <p>
+<body class="px-60 pt-5 bg-[#F8FAFC]">
+    <nav class="flex flex-col gap-4">
+        <p class="text-2xl text-blue-900 font-bold">
             Job Application Tracker
         </p>
-        <div>
-            <div class="border border-gray-500 rounded-lg bg-white">
-                <p>
-                    Total 02
-                </p>
-                <p class="text-lg">
-
-                </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
+                <p class="font-medium text-gray-600">Total</p>
+                <p id="acceptedCount" class="text-2xl font-bold text-blue-900">13</p>
             </div>
-            <div class="border border-gray-500 rounded-lg bg-white">
-                <p>
-                    Total 02
-                </p>
-                <p class="text-lg">
-
-                </p>
+            <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
+                <p class="font-medium text-gray-600">Interview</p>
+                <p id="acceptedCount" class="text-2xl font-bold text-green-500">13</p>
             </div>
-            <div class="border border-gray-500 rounded-lg bg-white">
-                <p>
-                    Total 02
-                </p>
-                <p class="text-lg">
-
-                </p>
+            <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
+                <p class="font-medium text-gray-600">Rejected</p>
+                <p id="acceptedCount" class="text-2xl font-bold text-red-400">13</p>
             </div>
         </div>
     </nav>
+    <hr class="my-8 border-gray-200">
+    <main class="grid gap-6">
+        <div class="flex gap-4 justify-between">
+            <p class="font-bold text-xl text-gray-600">Available Jobs</p>
+            <p class="font-bold text-gray-600">8 Jobs</p>
+        </div>
+        <div class="grid gap-4">
+            <div class="flex gap-4">
+                <button class="min-w-20 px-3 py-2 text-white text-lg font-medium rounded-md bg-blue-600">All</button>
+                <button
+                    class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400">Interview</button>
+                <button
+                    class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400">Rejected</button>
+            </div>
+
+        </div>
+    </main>
 </body>
 
 </html>
