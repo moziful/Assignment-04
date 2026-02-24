@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/js/all.min.js"></script>
+    <script src="script.js"></script>
     <title>Job Tracker</title>
 </head>
 
@@ -21,11 +22,11 @@
             </div>
             <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
                 <p class="font-medium text-gray-600">Interview</p>
-                <p id="acceptedCount" class="text-2xl font-bold text-green-500">0</p>
+                <p id="interviewCount" class="text-2xl font-bold text-green-500">0</p>
             </div>
             <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
                 <p class="font-medium text-gray-600">Rejected</p>
-                <p id="acceptedCount" class="text-2xl font-bold text-red-400">0</p>
+                <p id="rejectedCount" class="text-2xl font-bold text-red-400">0</p>
             </div>
         </div>
     </nav>
@@ -43,13 +44,13 @@
                 <button
                     class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400">Rejected</button>
             </div>
-            <div class="grid p-6 gap-5 bg-white rounded-xl border border-amber-600">
+            <div id="job" class="grid p-6 gap-5 bg-white rounded-xl border border-amber-600">
                 <div class="flex justify-between items-center">
                     <div class="grid gap-1">
                         <p class="text-xl text-blue-900 font-bold">Mobile First Corp</p>
                         <p class="text-gray-600">React Native Developer</p>
                     </div>
-                    <i
+                    <i id="deleteButton"
                         class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200"></i>
                 </div>
                 <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
