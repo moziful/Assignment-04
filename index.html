@@ -37,13 +37,22 @@
         </div>
         <div class="grid gap-4">
             <div class="flex gap-4">
-                <button
-                    class="min-w-20 px-3 py-2 text-white text-lg font-medium rounded-md bg-blue-600 cursor-pointer">All</button>
-                <button
+                <button id="allTabBtn"
+                    class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400 cursor-pointer">All</button>
+                <button id="interviewTabBtn"
                     class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400 cursor-pointer">Interview</button>
-                <button
+                <button id="rejectedTabBtn"
                     class="min-w-20 px-3 py-2 text-gray-500 text-lg font-medium rounded-md bg-white border border-gray-400 cursor-pointer">Rejected</button>
             </div>
+            <!-- <div id="noJobs" class="hidden py-15 px-10 flex-col items-center text-center">
+                <img src="./images/jobs.png" alt="">
+                <p class="text-xl text-blue-900 font-bold">
+                    No jobs available
+                </p>
+                <p class="text-gray-500">
+                    Check back soon for new job opportunities
+                </p>
+            </div> -->
             <div id="jobsContainer"></div>
         </div>
     </main>
