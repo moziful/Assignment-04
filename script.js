@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (filteredJobs.length === 0) {
             container.innerHTML = `
-                <div class="text-center py-10">
+                <div class="flex flex-col items-center gap-6 justify-center text-center py-10">
+                    <img class="h-20 w-20" src="./images/jobs.png">
                     <p class="text-xl font-bold text-blue-900">No jobs available</p>
                     <p class="text-gray-500">Check back soon</p>
                 </div>
@@ -63,7 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p class="text-xl font-bold text-blue-900">${job.company}</p>
                             <p class="text-gray-600">${job.position}</p>
                         </div>
-                        <button onclick="deleteJob(${job.id})" class="text-red-400">🗑</button>
+                        <button onclick="deleteJob(${job.id})" class="text-gray-400">
+                            <i class="deleteBtn p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200 cursor-pointer hover:bg-gray-200"></i>
+
+                        </button>
                     </div>
 
                     <p class="text-gray-500 mt-2">
