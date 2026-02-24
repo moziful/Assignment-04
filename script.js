@@ -81,42 +81,49 @@ const jobs = [
   }
 ]; 
 
-
+// Update total job count
 let totalJobs = document.getElementById("totalCount");
 totalJobs.innerText = jobs.length;
+let totalJobsCount = document.getElementById("totalJobsCount");
+totalJobsCount.innerText = jobs.length;
 
+// Create Job Card Via Js
 let container = document.getElementById("jobsContainer");
-let job = jobs[1];
-container.innerHTML = `
-    <div id="job" class="grid p-6 gap-5 bg-white rounded-xl hover:border-2 border-gray-300">
-                <div class="flex justify-between items-center">
-                    <div class="grid gap-1">
-                        <p class="text-xl text-blue-900 font-bold">
-                            ${job.company}
-                        </p>
-                        <p class="text-gray-600">
-                            ${job.position}
-                        </p>
-                    </div>
-                    <i id="deleteButton"
-                        class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200 cursor-pointer hover:bg-gray-200"></i>
-                </div>
-                <p class="text-gray-500">
-                    ${job.location} • ${job.type} • ${job.salary}
+for(let job of jobs){
+    if(job.status === "all"){
+    container.innerHTML += `
+    <div data-id="${job.id}" class="mb-4 grid p-6 gap-5 bg-white rounded-xl hover:bg-gray-100">
+        <div class="flex justify-between items-center">
+            <div class="grid gap-1">
+                <p class="text-xl text-blue-900 font-bold">
+                    ${job.company}
                 </p>
-                <div>
-                    <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">
-                        NOT APPLIED
-                    </button>
-                    <p>
-                        ${job.description}
-                    </p>
-                </div>
-                <div>
-                    <button
-                        class="min-w-20 px-3 py-2 text-green-500 text-lg font-medium rounded-md bg-white border border-green-500 cursor-pointer">INTERVIEW</button>
-                    <button
-                        class="min-w-20 px-3 py-2 text-red-400 text-lg font-medium rounded-md bg-white border border-red-400 cursor-pointer">REJECTED</button>
-                </div>
+                <p class="text-gray-600">
+                    ${job.position}
+                </p>
             </div>
+            <i data-id="${job.id}" class="deleteBtn p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200 cursor-pointer hover:bg-gray-200"></i>
+        </div>
+        <p class="text-gray-500">
+            ${job.location} • ${job.type} • ${job.salary}
+        </p>
+        <div>
+            <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">
+                NOT APPLIED
+            </button>
+            <p>
+                ${job.description}
+            </p>
+        </div>
+        <div>
+            <button class="min-w-20 px-3 py-2 text-green-500 text-lg font-medium rounded-md bg-white border border-green-500 cursor-pointer">
+                INTERVIEW
+            </button>
+            <button class="min-w-20 px-3 py-2 text-red-400 text-lg font-medium rounded-md bg-white border border-red-400 cursor-pointer">
+                REJECTED
+            </button>
+        </div>
+    </div>
 `;
+}
+}
