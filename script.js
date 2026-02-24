@@ -79,4 +79,34 @@ const jobs = [
     description: "Design cloud infrastructure, manage deployments, and optimize performance in distributed systems.",
     status: "all"
   }
-];
+]; 
+
+let container = document.getElementById("jobsContainer");
+container.innerHTML = `
+    <div id="job" class="grid p-6 gap-5 bg-white rounded-xl">
+                <div class="flex justify-between items-center">
+                    <div class="grid gap-1">
+                        <p class="text-xl text-blue-900 font-bold">Mobile First Corp</p>
+                        <p class="text-gray-600">React Native Developer</p>
+                    </div>
+                    <i id="deleteButton"
+                        class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200"></i>
+                </div>
+                <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                <div>
+                    <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">NOT
+                        APPLIED</button>
+                    <p>
+                        Create stunning web experiences for high-profile clients. Must have portfolio and experience
+                        with
+                        modern web design trends.
+                    </p>
+                </div>
+                <div>
+                    <button
+                        class="min-w-20 px-3 py-2 text-green-500 text-lg font-medium rounded-md bg-white border border-green-500">INTERVIEW</button>
+                    <button
+                        class="min-w-20 px-3 py-2 text-red-400 text-lg font-medium rounded-md bg-white border border-red-400">Rejected</button>
+                </div>
+            </div>
+`;
