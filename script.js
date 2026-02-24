@@ -81,22 +81,33 @@ const jobs = [
   }
 ]; 
 
+
+let totalJobs = document.getElementById("totalCount");
+totalJobs.innerText = jobs.length;
+
 let container = document.getElementById("jobsContainer");
 let job = jobs[1];
 container.innerHTML = `
     <div id="job" class="grid p-6 gap-5 bg-white rounded-xl hover:border-2 border-gray-300">
                 <div class="flex justify-between items-center">
                     <div class="grid gap-1">
-                        <p class="text-xl text-blue-900 font-bold">${job.company}</p>
-                        <p class="text-gray-600">${job.position}</p>
+                        <p class="text-xl text-blue-900 font-bold">
+                            ${job.company}
+                        </p>
+                        <p class="text-gray-600">
+                            ${job.position}
+                        </p>
                     </div>
                     <i id="deleteButton"
                         class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200 cursor-pointer hover:bg-gray-200"></i>
                 </div>
-                <p class="text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
+                <p class="text-gray-500">
+                    ${job.location} • ${job.type} • ${job.salary}
+                </p>
                 <div>
-                    <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">NOT
-                        APPLIED</button>
+                    <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">
+                        NOT APPLIED
+                    </button>
                     <p>
                         ${job.description}
                     </p>
