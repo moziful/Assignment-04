@@ -82,31 +82,30 @@ const jobs = [
 ]; 
 
 let container = document.getElementById("jobsContainer");
+let job = jobs[1];
 container.innerHTML = `
-    <div id="job" class="grid p-6 gap-5 bg-white rounded-xl">
+    <div id="job" class="grid p-6 gap-5 bg-white rounded-xl hover:border-2 border-gray-300">
                 <div class="flex justify-between items-center">
                     <div class="grid gap-1">
-                        <p class="text-xl text-blue-900 font-bold">Mobile First Corp</p>
-                        <p class="text-gray-600">React Native Developer</p>
+                        <p class="text-xl text-blue-900 font-bold">${job.company}</p>
+                        <p class="text-gray-600">${job.position}</p>
                     </div>
                     <i id="deleteButton"
-                        class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200"></i>
+                        class="p-3 text-center items-center fa-regular fa-trash-can rounded-full border border-gray-200 cursor-pointer hover:bg-gray-200"></i>
                 </div>
-                <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                <p class="text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
                 <div>
                     <button class="bg-[#F8FAFC] min-w-20 px-3 py-2 text-lg text-blue-900 font-medium rounded-md">NOT
                         APPLIED</button>
                     <p>
-                        Create stunning web experiences for high-profile clients. Must have portfolio and experience
-                        with
-                        modern web design trends.
+                        ${job.description}
                     </p>
                 </div>
                 <div>
                     <button
-                        class="min-w-20 px-3 py-2 text-green-500 text-lg font-medium rounded-md bg-white border border-green-500">INTERVIEW</button>
+                        class="min-w-20 px-3 py-2 text-green-500 text-lg font-medium rounded-md bg-white border border-green-500 cursor-pointer">INTERVIEW</button>
                     <button
-                        class="min-w-20 px-3 py-2 text-red-400 text-lg font-medium rounded-md bg-white border border-red-400">Rejected</button>
+                        class="min-w-20 px-3 py-2 text-red-400 text-lg font-medium rounded-md bg-white border border-red-400 cursor-pointer">REJECTED</button>
                 </div>
             </div>
 `;
