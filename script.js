@@ -112,13 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
             filter === "all"
                 ? jobs
                 : jobs.filter(job => job.status === filter);
-                // No job screen 
         if (filteredJobs.length === 0) {
             container.innerHTML = `
-                <div class="flex flex-col items-center gap-6 justify-center text-center py-10">
+                <div class="h-100 bg-white rounded-xl shadow px-15 py-10 flex flex-col items-center gap-6 justify-center text-center">
                     <img class="h-20 w-20" src="./images/jobs.png">
-                    <p class="text-xl font-bold text-blue-900">No jobs available</p>
-                    <p class="text-gray-500">Check back soon</p>
+                    <div>
+                        <p class="text-xl font-bold text-blue-900">No Jobs Available</p>
+                        <p class="text-gray-500">Check back soon</p>
+                    <//div>
                 </div>
             `;
             return;
