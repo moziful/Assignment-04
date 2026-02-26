@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="mb-4 p-6 bg-white rounded-xl shadow">
                     <div class="flex justify-between">
                         <div>
-                            <p class="text-xl font-bold text-blue-900">${job.company}</p>
+                            <p class="text-2xl font-bold text-blue-900">${job.company}</p>
                             <p class="text-gray-600">${job.position}</p>
                         </div>
                         <button onclick="deleteJob(${job.id})" class="text-gray-500">
@@ -139,20 +139,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="text-gray-500 mt-2">
                         ${job.location} • ${job.type} • ${job.salary}
                     </p>
-                    <button class="mt-3 px-3 py-1 rounded 
+                    <button class="mt-3 px-3 py-1 rounded font-medium
                         ${job.status === "interview" ? "bg-green-400 text-white"
                         : job.status === "rejected" ? "bg-red-400 text-white"
                         : "bg-gray-200"}">
                         ${job.status === "all" ? "NOT APPLIED" : job.status.toUpperCase()}
                     </button>
-                    <p class="mt-2">${job.description}</p>
+                    <p class="mt-2 text-gray-700">${job.description}</p>
                     <div class="mt-4 flex gap-3">
                         <button onclick="updateJobStatus(${job.id}, 'interview')" 
-                            class="px-3 py-1 border border-green-400 text-green-400 rounded">
+                            class="px-3 py-1 border-2 border-green-400 text-green-400 rounded cursor-pointer font-semibold">
                             INTERVIEW
                         </button>
                         <button onclick="updateJobStatus(${job.id}, 'rejected')" 
-                            class="px-3 py-1 border border-red-400 text-red-400 rounded">
+                            class="px-3 py-1 border-2 border-red-400 text-red-400 rounded cursor-pointer font-semibold">
                             REJECTED
                         </button>
                     </div>
@@ -180,47 +180,48 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function activeTabBg() {
-    allTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white");
-    interviewTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white");
-    rejectedTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white");
+    allTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white", "border");
+    interviewTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white", "border");
+    rejectedTabBtn.classList.remove("bg-blue-400", "bg-white", "text-white", "border");
     if (currentTab === "all") {
         allTabBtn.classList.add("bg-blue-400", "text-white");
-        interviewTabBtn.classList.add("bg-white", "text-gray-500");
-        rejectedTabBtn.classList.add("bg-white", "text-gray-500");
+        interviewTabBtn.classList.add("bg-white", "text-gray-500", "border");
+        rejectedTabBtn.classList.add("bg-white", "text-gray-500", "border");
     }
     if (currentTab === "interview") {
         interviewTabBtn.classList.add("bg-blue-400", "text-white");
-        allTabBtn.classList.add("bg-white", "text-gray-500");
-        rejectedTabBtn.classList.add("bg-white", "text-gray-500");
+        allTabBtn.classList.add("bg-white", "text-gray-500", "border");
+        rejectedTabBtn.classList.add("bg-white", "text-gray-500", "border");
     }
     if (currentTab === "rejected") {
         rejectedTabBtn.classList.add("bg-blue-400", "text-white");
-        allTabBtn.classList.add("bg-white", "text-gray-500");
-        interviewTabBtn.classList.add("bg-white", "text-gray-500");
+        allTabBtn.classList.add("bg-white", "text-gray-500", "border");
+        interviewTabBtn.classList.add("bg-white", "text-gray-500", "border");
     }
     }
 
     document.getElementById("allTabBtn").addEventListener("click", () => {
         currentTab = "all";
+        document.getElementById("ofJobsCounter").innerText = "";
         renderJobs("all");
         activeTabBg();
     });
 
     document.getElementById("interviewTabBtn").addEventListener("click", () => {
         currentTab = "interview";
+        document.getElementById("ofJobsCounter").innerText = `${jobs.filter(j => j.status === "interview").length} of `;
         renderJobs("interview");
         activeTabBg();
     });
 
     document.getElementById("rejectedTabBtn").addEventListener("click", () => {
         currentTab = "rejected";
+        document.getElementById("ofJobsCounter").innerText = `${jobs.filter(j => j.status === "rejected").length} of `;
         renderJobs("rejected");
         activeTabBg();
     });
 
- 
     statusCount();
     renderJobs("all");
     activeTabBg();
-
 });

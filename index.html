@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
                 <p class="font-medium text-gray-600">Total</p>
-                <p id="totalCount" class="text-2xl font-bold text-blue-900">8</p>
+                <p id="totalCount" class="text-2xl font-bold text-blue-900">0</p>
             </div>
             <div class="grid gap-2 bg-white border border-gray-300 rounded-xl p-5">
                 <p class="font-medium text-gray-600">Interview</p>
@@ -34,7 +34,8 @@
     <main class="grid gap-6">
         <div class="flex gap-4 justify-between">
             <p class="font-bold text-xl text-gray-600">Available Jobs</p>
-            <p class="font-bold text-gray-600"><span id="totalJobsCount">8</span> Jobs</p>
+            <p class="font-bold text-gray-600"><span id="ofJobsCounter"></span><span id="totalJobsCount">0</span> Jobs
+            </p>
         </div>
         <div class="grid gap-4">
             <div class="flex gap-4">
@@ -45,20 +46,10 @@
                 <button id="rejectedTabBtn"
                     class="min-w-20 px-3 py-2 text-lg font-medium rounded-md border border-gray-400 cursor-pointer">Rejected</button>
             </div>
-            <!-- <div id="noJobs" class="hidden py-15 px-10 flex-col items-center text-center">
-                <img src="./images/jobs.png" alt="">
-                <p class="text-xl text-blue-900 font-bold">
-                    No jobs available
-                </p>
-                <p class="text-gray-500">
-                    Check back soon for new job opportunities
-                </p>
-            </div> -->
             <div id="jobsContainer"></div>
         </div>
     </main>
 </body>
-<img src="./images/" alt="">
 
 <script src="script.js"></script>
 
