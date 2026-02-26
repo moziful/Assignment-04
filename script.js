@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </button>
                         <button onclick="updateJobStatus(${job.id}, 'rejected')" 
                             class="px-3 py-1 border-2 border-red-400 text-red-400 rounded cursor-pointer font-semibold">
-                            REJECTED
+                            REJECT
                         </button>
                     </div>
                 </div>
